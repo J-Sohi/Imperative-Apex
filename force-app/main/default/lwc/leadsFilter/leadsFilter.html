@@ -1,0 +1,25 @@
+<template>
+	<!--TODO 1: Add required attributes to the lightning-card component-->
+	<lightning-card title="Leads Filter" icon-name="custom:custom101">
+		<div class="slds-m-around_medium">
+			<p class="slds-text-heading_medium">Select a status</p>
+			<br>
+			<!--TODO 2: Create 5 lightning-button components-->
+			<lightning-button label="All" onclick={handleAllLeads} variant="Neutral"></lightning-button>
+			<lightning-button label="Open - Not Contacted" onclick={handleOpenNotContactedLeads} variant="Neutral"></lightning-button>
+			<lightning-button label="Working Contacted" onclick={handleWorkingContactedLeads} variant="Neutral"></lightning-button>
+			<lightning-button label="Closed - Converted" onclick={handleClosedConvertedLeads} variant="Neutral"></lightning-button>
+			<lightning-button label="Closed - Not Converted" onclick={handleClosedNotConvertedLeads} variant="Neutral"></lightning-button>
+			
+			<!--TODO 3: Create a lightning-datatable-->
+			<lightning-datatable
+					key-field="id"
+					data={leads}
+					columns={columns}
+					hide-checkbox-column="true"
+                    show-row-number-column="true">>
+					
+			</lightning-datatable>
+		</div>
+	</lightning-card>
+</template>
